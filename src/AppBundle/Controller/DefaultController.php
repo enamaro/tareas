@@ -31,7 +31,10 @@ class DefaultController extends Controller
 
         $tarea = $repository->findOneById($id);
 
-        return $this->render('default/tarea_unica.html.twig', array('tarea'=>$tarea) );
+        $url_atras = $this->generateUrl('homepage');
+
+        return $this->render('default/tarea_unica.html.twig', 
+            array('tarea'=>$tarea, 'url_atras'=>$url_atras) );
     }
 
     
