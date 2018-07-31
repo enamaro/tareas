@@ -16,7 +16,7 @@ class DefaultController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('AppBundle:Tarea');
 
-        $tareas = $repository->findAll();
+        $tareas = $repository->findAllOrderedByDescripcion();
 
         return $this->render('default/pantalla_tareas.html.twig', array('tareas'=>$tareas, 'mensaje'=>"Hola") );
     }
